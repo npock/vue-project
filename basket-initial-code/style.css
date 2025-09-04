@@ -1,18 +1,7 @@
 body {
   background-color: #f0f0f0;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    sans-serif,
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
 }
 
 .container {
@@ -166,30 +155,4 @@ body {
 
 .basket-table__total {
   font-size: 1.4rem;
-}
-
-.btn--check path {
-  fill: black;
-}
-
-.todo-list__item--completed .btn--check path,
-.btn--check:hover path {
-  fill: #38c172;
-}
-
-.todo-list__empty {
-  text-align: center;
-  color: #999;
-}
-
-.todo-app__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 10px;
-}
-
-.todo-app__footer-text {
-  flex-grow: 1;
 }
