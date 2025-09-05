@@ -11,7 +11,7 @@ const columns = reactive({
   action: { name: 'Action' },
 })
 
-const basket = reactive([
+const defaultBascet = [
   {
     id: 1,
     products_details: {
@@ -39,26 +39,39 @@ const basket = reactive([
     quantity: 1,
     imageUrl: '../basket-initial-code/assets/sweatshirt.png',
   },
-])
+]
+
+let localBascet = localStorage.getItem('total')
+if (localBascet === null) {
+  //localStorage.setItem('total', JSON.stringify(defaultBascet))
+  localBascet = defaultBascet
+} else {
+  localBascet = JSON.parse(localBascet)
+}
+
+const basket = reactive(localBascet)
 
 const increaseItemQuantity = (item) => {
   item.quantity++
+  localStorage.setItem('total', JSON.stringify(basket))
 }
 
 const decreaseItemQuantity = (item) => {
   if (item.quantity > 1) {
     item.quantity--
   }
+  localStorage.setItem('total', JSON.stringify(basket))
 }
 
 const removeItem = (id) => {
   const index = basket.findIndex((item) => item.id === id)
   basket.splice(index, 1)
+  localStorage.setItem('total', JSON.stringify(basket))
 }
 
 const totalPrice = computed(() => {
   const sum = basket.reduce((a, b) => a + b.price * b.quantity, 0)
-  localStorage.setItem('total', sum)
+
   return sum
 })
 </script>
