@@ -42,7 +42,8 @@ const defaultBascet = [
 ]
 
 let localBascet = localStorage.getItem('total')
-if (localBascet === null) {
+console.log(JSON.parse(localBascet))
+if (localBascet === null || JSON.parse(localBascet).length === 0) {
   //localStorage.setItem('total', JSON.stringify(defaultBascet))
   localBascet = defaultBascet
 } else {
